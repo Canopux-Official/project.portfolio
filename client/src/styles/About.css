@@ -29,7 +29,7 @@
 }
 
 .name_container {
-    width: 200px;
+    width: 230px;
     height: 50px;
     background: rgba(255, 255, 255, 0.1);
     /* Transparent background */
@@ -47,6 +47,7 @@
     backdrop-filter: blur(10px);
     /* Blur effect */
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    padding: 0px 2px;
 }
 
 .about_image {

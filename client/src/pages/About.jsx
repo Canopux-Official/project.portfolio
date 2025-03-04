@@ -5,38 +5,38 @@ import user from "../assets/user.png"
 const members = [
     {
         image: user,
-        name: "John Doe",
-        skills: ["React", "Node.js", "MongoDB"]
+        name: "Akhilesh Choudhary",
+        skills: ["IOT", "Arduino", "3D Printing", "Frontend Development"]
     },
     {
         image: user,
-        name: "Jane Smith",
-        skills: ["Python", "Machine Learning", "Data Science"]
+        name: "Jagannath Adhikari",
+        skills: ["Android Development With Kotlin","Jet Pack Compose" ,"Firebase"]
     },
     {
         image: user,
-        name: "Alice Johnson",
-        skills: ["UI/UX Design", "Figma", "Adobe XD"]
+        name: "Prem Chandra Prasad",
+        skills: ["Java", "Javascript", "React+Vite", "Next.Js", "Node Js", "Tailwind UI","MongoDB"]
     },
     {
         image: user,
-        name: "Bob Williams",
-        skills: ["DevOps", "AWS", "Docker"]
+        name: "Ashish Mittal",
+        skills: ["HTML", "Tailwind CSS", "Javascript","React","Node Js","ShadCn UI"]
     },
     {
         image: user,
-        name: "Bob Williams",
-        skills: ["DevOps", "AWS", "Docker"]
+        name: "Paresh Chandra Pothal",
+        skills: ["React", "Node JS", "MongoDB","Streamlit","Python","ML"]
     },
     {
         image: user,
-        name: "Bob Williams",
-        skills: ["DevOps", "AWS", "Docker"]
+        name: "Archit Mishra",
+        skills: ["React+Vite", "Node JS", "Docker","MongoDB","UI-UX Design", "Tailwind CSS","Material UI"]
     }
     , {
         image: user,
-        name: "Bob Williams",
-        skills: ["DevOps", "AWS", "Docker"]
+        name: "Pratik Sourav Panda",
+        skills: ["Management", "C/C++","Python","Marketing","Finance","Content Writing","Graphic Designing"]
     }
 ]
 
