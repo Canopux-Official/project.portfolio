@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Hero.css";
-import logo from "../assets/logo.jpeg";
+import logo1 from "../assets/logo1.png";
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -25,7 +25,7 @@ const Hero = () => {
     <section className={`hero ${isVisible ? "visible" : ""}`}>
       <div className="hero-container">
         <div className="hero-left">
-          <img src={logo} alt="Cannopux Logo" className="hero-img" />
+          <img src={logo1} alt="Cannopux Logo" className="hero-img" />
         </div>
         <div className="hero-right">
           <h1>Welcome to <span>Canopux</span></h1>
