@@ -1,7 +1,7 @@
 import React from 'react'
 import "../styles/ProjectPage.css"
 import VideoComponent from '../components/VideoComponent'
-
+import { useEffect, useState } from "react";
 const projects = [
     { title: "Project 1", video: <VideoComponent />, description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ipsum eum natus alias numquam optio facere cum odio. In et eveniet distinctio ut beatae eum recusandae enim laboriosam velit iusto, odio dolores dicta dolorum ipsam rerum repellat molestias non quibusdam nostrum, fugiat iure, optio illo? Quae eaque enim sit, officiis commodi dolorum numquam ex itaque voluptates corrupti explicabo sequi earum sunt, tempora eos deserunt totam optio a.",reference: "https://www.google.com" },
 
@@ -14,6 +14,9 @@ const projects = [
 ];
 
 const ProjectPage = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     return (
         <div className='Project_Page'>
             <div className='project_container'>
