@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Hero.css";
-import logo from "../assets/logo.jpeg";
+import logo1 from "../assets/logo1.png";
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -25,7 +25,7 @@ const Hero = () => {
     <section className={`hero ${isVisible ? "visible" : ""}`}>
       <div className="hero-container">
         <div className="hero-left">
-          <img src={logo} alt="Cannopux Logo" className="hero-img" />
+          <img src={logo1} alt="Cannopux Logo" className="hero-img" />
         </div>
         <div className="hero-right">
           <h1>Welcome to <span>Canopux</span></h1>
@@ -38,7 +38,7 @@ const Hero = () => {
             that cater to diverse industry needs. Whether it's a <strong className="bold">custom web application</strong>,  
             an  <strong className="bold">AI-powered automation system</strong>, or an  <strong className="bold">IoT-driven product</strong>, we've got you covered!  
           </p>
-          <p className="highlight">🚀 Your vision. Our expertise. Limitless possibilities.</p>
+          <p className="highlight">🚀 Yourr vision. Our expertise. Limitless possibilities.</p>
         </div>
       </div>
     </section>

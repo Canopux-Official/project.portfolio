@@ -43,11 +43,6 @@ const Navbar = () => {
           </button>
         </li>
         <li>
-          <button className="nav-btn" onClick={() => scrollToSection("services")}>
-            Services
-          </button>
-        </li>
-        <li>
           <button className="nav-btn" onClick={gotoProject}>
             Projects
           </button>

@@ -156,7 +156,7 @@
 @media (max-width: 600px) {
     .hero {
         padding: 40px 5%;
-        margin-top: -20px;
+        /* margin-top: -20px; */
     }
 
     .hero-right h1 {

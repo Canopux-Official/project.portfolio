@@ -64,16 +64,35 @@
 .project_wrapper {
     display: flex;
     flex-direction: column;
-    gap: 40px
+    gap: 40px;
+    padding: 20px;
 }
+
+.project_slider {
+    width: 600px;
+    margin-bottom: 20px;
+}
+
+.slider_image{
+    width: 100%;
+}
+
+.pro-btn {
+    background: rgba(0, 255, 170, 0.385);
+    border: 2px solid rgba(0, 255, 170, 0.444);
+    color: white;
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
 
 @media only screen and (max-width: 1200px) {
     .project_content {
         flex-direction: column;
-    }
-
-    .project_video {
-        width: 100%;
     }
 
     .project_description {
@@ -81,8 +100,11 @@
     }
 
     .project_container {
-        width: 90%;
+        width: 100%;
         justify-content: center;
+    }
+    .project_slider{
+        width: 400px;
     }
 }
 
@@ -90,5 +112,8 @@
     .project_title {
         margin-top: 30%;
         margin-bottom: 20%;
+    }
+    .project_slider{
+        width: 300px;
     }
 }
