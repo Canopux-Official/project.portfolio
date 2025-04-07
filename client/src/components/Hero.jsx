@@ -38,7 +38,7 @@ const Hero = () => {
             that cater to diverse industry needs. Whether it's a <strong className="bold">custom web application</strong>,  
             an  <strong className="bold">AI-powered automation system</strong>, or an  <strong className="bold">IoT-driven product</strong>, we've got you covered!  
           </p>
-          <p className="highlight">🚀 Your vision. Our expertise. Limitless possibilities.</p>
+          <p className="highlight">🚀 Yourr vision. Our expertise. Limitless possibilities.</p>
         </div>
       </div>
     </section>
