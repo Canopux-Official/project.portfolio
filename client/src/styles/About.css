@@ -17,6 +17,7 @@
     font-weight: bold;
     background: linear-gradient(90deg, #0056b3, #008cff);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0px 0px 15px rgba(0, 140, 255, 0.7);
     margin-top: 10%;
@@ -44,6 +45,7 @@
     /* Text color */
     font-size: 18px;
     font-weight: bold;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     /* Blur effect */
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
@@ -73,6 +75,7 @@
 .about_skills {
     width: 100%;
     background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     padding: 1rem;
     border-radius: 10px;

@@ -75,7 +75,6 @@ const ProjectPage = () => {
         autoplaySpeed: 2000,
         arrows: false,
     };
-
     return (
         <div className='Project_Page'>
             <div className='project_container'>
