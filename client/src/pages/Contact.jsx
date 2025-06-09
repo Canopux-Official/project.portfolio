@@ -33,7 +33,7 @@
 // export default Contact
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Mail, Phone, MapPin, Clock, Users, Award, Zap, CheckCircle, ArrowRight, Send } from 'lucide-react';
+import { Mail, MapPin, Clock, Users, Award, Zap, CheckCircle, ArrowRight, Send } from 'lucide-react';
 import '../styles/contact.css';
 import { Link } from 'react-router-dom';
 import emailjs from 'emailjs-com';
