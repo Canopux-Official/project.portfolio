@@ -1,119 +1,221 @@
-.Project_Page {
-    width: 100vw;
+.project-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8faff 0%, #e8f2ff 50%, #f0f7ff 100%);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 0;
+}
+
+.floating-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: float 15s infinite ease-in-out;
+}
+
+.bg-shape-1 {
+  width: 300px;
+  height: 300px;
+  top: 20%;
+  left: 10%;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  animation-delay: 0s;
+}
+
+.bg-shape-2 {
+  width: 400px;
+  height: 400px;
+  bottom: 20%;
+  right: 10%;
+  background: linear-gradient(45deg, #8b5cf6, #ec4899);
+  animation-delay: 5s;
+}
+
+.bg-shape-3 {
+  width: 250px;
+  height: 250px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(45deg, #06b6d4, #3b82f6);
+  animation-delay: 10s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-30px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(15px) rotate(240deg);
+  }
 }
 
 .project_container {
-    width: 80%;
-    margin: 10% auto;
-    /* border: 1px solid red; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  width: 80%;
+  margin: 10% auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
 }
 
-.project_content {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.05); /* More transparent */
-    border: 2px solid rgba(255, 255, 255, 0.2); /* Lighter border */
-    backdrop-filter: blur(15px); /* Stronger blur for better transparency */
-    -webkit-backdrop-filter: blur(15px); /* Safari support */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1); /* Softer shadow */
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
+.project_container .main-title {
+  font-size: clamp(2rem, 5vw, 6rem);
 }
 
-.project_content:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-}
+.main-title {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 800;
+  text-align: center;
 
-.project_title {
-    font-size: 3rem;
-    font-weight: bold;
-    background: linear-gradient(90deg, #0056b3, #008cff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0px 0px 15px rgba(0, 140, 255, 0.7);
-    margin-top: 10%;
-    margin-bottom: 10%;
-}
-
-.project_video {
-    width: 50%;
-}
-
-.project_description {
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    gap: 10px;
-    flex-direction: column;
-}
-
-.project_links {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  background: linear-gradient(135deg, #2563eb, #8b5cf6, #4f46e5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+  line-height: 1.1;
+  animation: pulse 3s infinite;
 }
 
 .project_wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  gap: 70px;
+  padding: 20px;
+}
+
+.project_content {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project_content:hover {
+  transform: scale(1.03);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.25);
+}
+
+.project_description {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.project_description h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #10b981;
+  margin-bottom: 10px;
+}
+
+.project_description p {
+  font-size: 1rem;
+  color: #1e293b;
+  line-height: 1.6;
 }
 
 .project_slider {
-    width: 600px;
-    margin-bottom: 20px;
+  width: 550px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.slider_image{
-    width: 100%;
+.slider_image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.project_links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .pro-btn {
-    background: rgba(0, 255, 170, 0.385);
-    border: 2px solid rgba(0, 255, 170, 0.444);
-    color: white;
-    padding: 10px 18px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+  background: linear-gradient(to right, #34d399, #10b981);
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.5);
+  transition: transform 0.2s ease;
 }
 
+.pro-btn:hover {
+  transform: translateY(-2px);
+}
 
 @media only screen and (max-width: 1200px) {
-    .project_content {
-        flex-direction: column;
-    }
+  .project_container {
+    margin-top: 90px;
+  }
+  .project_content {
+    flex-direction: column;
+    padding: 24px;
+  }
 
-    .project_description {
-        width: 100%;
-    }
+  .project_slider {
+    width: 100%;
+  }
 
-    .project_container {
-        width: 100%;
-        justify-content: center;
-    }
-    .project_slider{
-        width: 400px;
-    }
+  .project_description {
+    width: 100%;
+    text-align: center;
+  }
+
+  .pro-btn {
+    margin: 0 auto;
+  }
 }
 
 @media only screen and (max-width: 800px) {
-    .project_title {
-        margin-top: 30%;
-        margin-bottom: 20%;
-    }
-    .project_slider{
-        width: 300px;
-    }
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .project_content {
+    padding: 20px;
+  }
+
+  .project_slider {
+    width: 100%;
+  }
+
+  .project_description p {
+    font-size: 0.95rem;
+  }
 }
