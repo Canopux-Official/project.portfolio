@@ -275,7 +275,7 @@ const Home = () => {
           <Link to="/contact" className="cta-btn primary">
             Contact Us <span className="btn-arrow">→</span>
           </Link>
-          <Link to="/projects" className="cta-btn secondary">
+          <Link to="/project" className="cta-btn secondary">
             Our Projects <span className="btn-arrow">→</span>
           </Link>
         </div>
