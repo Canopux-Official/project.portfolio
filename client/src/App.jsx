@@ -1,7 +1,4 @@
-import React from "react";
 import Navbar from "./components/NavBar.jsx";
-import Hero from "./components/Hero";
-import Services from "./components/Services";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import ProjectPage from "./pages/ProjectPage.jsx";
