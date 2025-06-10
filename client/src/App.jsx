@@ -5,13 +5,16 @@ import ProjectPage from "./pages/ProjectPage.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import Home from "./pages/Home.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 const App = () => {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <Navbar />
         <Routes>
+
           <Route path="/" element={<Home />} />
           <Route path="/project" element={<ProjectPage />} />
           <Route path="/about" element={<About />} />
@@ -21,7 +24,7 @@ const App = () => {
         <section id="footer">
           <Footer />
         </section>
-      </Router>
+      </Router >
     </>
   );
 };

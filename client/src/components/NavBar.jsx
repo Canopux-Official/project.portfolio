@@ -72,7 +72,7 @@
 
 import React, { useState, useEffect } from "react";
 import "../styles/NavBar.css";
-import {useNavigate} from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -120,36 +120,28 @@ const Navbar = () => {
     }
   };
 
-  const gotoProject = () => {
-    navigate("/project");
-    setActiveSection('projects');
-    closeMenu();
-  };
+  const location = useLocation();
 
-  const gotoHome = () => {
-    navigate("/");
-    setActiveSection('home');
-    closeMenu();
-  };
+  useEffect(() => {
+    const path = location.pathname;
 
-  const gotoAbout = () => {
-    navigate("/about");
-    setActiveSection('about');
-    closeMenu();
-  };
+    if (path.startsWith('/project')) setActiveSection('projects');
+    else if (path.startsWith('/about')) setActiveSection('about');
+    else if (path.startsWith('/contact')) setActiveSection('contact');
+    else setActiveSection('home');
+  }, [location.pathname]);
 
-  const gotoContact = () => {
-    navigate("/contact");
-    setActiveSection('contact');
-    closeMenu();
-  };
 
   const navItems = [
-    { name: 'Home', action: gotoHome, id: 'home' },
-    { name: 'Projects', action: gotoProject, id: 'projects' },
-    { name: 'About Us', action: gotoAbout, id: 'about' },
-    { name: 'Contact Us', action: gotoContact, id: 'contact' }
+    { name: 'Home', action: '/', id: 'home' },
+    { name: 'Projects', action: '/project', id: 'projects' },
+    { name: 'About Us', action: '/about', id: 'about' },
+    { name: 'Contact Us', action: '/contact', id: 'contact' }
   ];
+
+  const gotoHome=()=>{
+    navigate("/")
+  }
 
   return (
     <>
@@ -166,18 +158,19 @@ const Navbar = () => {
           <div className={`nav-links ${isOpen ? "active" : ""}`}>
             <div className="nav-links-container">
               {navItems.map((item, index) => (
-                <div key={item.id} className="nav-item">
-                  <button 
+                <div key={item.id} className="nav-item" style={{textDecoration: "none"}}>
+                  <Link
+                    to={item.action}
                     className={`nav-btn ${activeSection === item.id ? 'active' : ''}`}
-                    onClick={item.action}
                     style={{ animationDelay: `${index * 0.1}s` }}
+                    aria-current={activeSection === item.id ? 'page' : undefined}
                   >
                     <span className="nav-btn-text">{item.name}</span>
                     <span className="nav-btn-bg"></span>
-                  </button>
+                  </Link>
                 </div>
               ))}
-              
+
               {/* CTA Button */}
               {/* <div className="nav-cta">
                 <button className="cta-btn" onClick={gotoContact}>
