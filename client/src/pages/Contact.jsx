@@ -286,26 +286,6 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-
-                {/* Call to Action */}
-                <div className="cta-section">
-                    <div className="cta-content">
-                        <h2 className="cta-title">
-                            Ready to Transform Your Business?
-                        </h2>
-                        <p className="cta-subtitle">
-                            Join hundreds of satisfied clients who trust us with their IT solutions
-                        </p>
-                        <div className="cta-buttons">
-                            <button className="cta-btn primary">
-                                Get Free Consultation
-                            </button>
-                            <Link to='/project' className="cta-btn secondary">
-                                View Our Projects
-                            </Link>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     );
