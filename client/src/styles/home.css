@@ -7,7 +7,7 @@
   min-height: 100vh;
   background: linear-gradient(135deg, #f8faff 0%, #e8f2ff 50%, #f0f7ff 100%);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .header-section {
   text-align: center;

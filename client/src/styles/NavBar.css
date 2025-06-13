@@ -142,6 +142,7 @@
   text-transform: capitalize;
   letter-spacing: 0.02em;
   animation: fadeInDown 0.6s ease-out both;
+  text-decoration: none;
 }
 
 .nav-btn-text {
@@ -322,6 +323,7 @@
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  z-index: 1001;
 }
 
 .close-line {
@@ -423,7 +425,7 @@
     position: fixed;
     top: 0;
     right: -100%;
-    width: 300px;
+    width: 320px;
     height: 100vh;
     background: linear-gradient(135deg, 
       rgba(15, 23, 42, 0.98) 0%,
@@ -436,6 +438,8 @@
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border-left: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: -10px 0 25px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    overflow-y: auto;
   }
   
   .nav-links.active {
@@ -445,30 +449,43 @@
   
   .nav-links-container {
     flex-direction: column;
-    gap: 0;
+    gap: 1rem;
     width: 100%;
+    align-items: stretch;
   }
   
   .nav-item {
     width: 100%;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
   }
   
   .nav-btn {
     width: 100%;
-    padding: 18px 20px;
+    padding: 20px 24px;
     text-align: left;
     font-size: 1.1rem;
     border-radius: 12px;
     animation: fadeInUp 0.6s ease-out both;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 8px;
+    margin-bottom: 0;
+    display: block;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    min-height: 56px;
+    line-height: 1.4;
   }
   
   .nav-btn:nth-child(1) { animation-delay: 0.1s; }
   .nav-btn:nth-child(2) { animation-delay: 0.2s; }
   .nav-btn:nth-child(3) { animation-delay: 0.3s; }
   .nav-btn:nth-child(4) { animation-delay: 0.4s; }
+  .nav-btn:nth-child(5) { animation-delay: 0.5s; }
+  
+  .nav-btn:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateX(4px);
+  }
   
   .nav-cta {
     margin: 2rem 0 0 0;
@@ -477,10 +494,13 @@
   
   .cta-btn {
     width: 100%;
-    padding: 18px;
+    padding: 20px 24px;
     font-size: 1rem;
     animation: fadeInUp 0.6s ease-out both;
-    animation-delay: 0.5s;
+    animation-delay: 0.6s;
+    min-height: 56px;
+    border-radius: 12px;
+    text-align: center;
   }
   
   .mobile-close {
@@ -503,7 +523,7 @@
 
 @media (max-width: 480px) {
   .nav-links {
-    width: 280px;
+    width: 100%;
     padding: 5rem 1.5rem 2rem;
   }
   
@@ -523,6 +543,17 @@
   .bar {
     width: 22px;
     height: 2.5px;
+  }
+  
+  .nav-btn {
+    padding: 18px 20px;
+    font-size: 1rem;
+    min-height: 52px;
+  }
+  
+  .cta-btn {
+    padding: 18px 20px;
+    min-height: 52px;
   }
 }
 
@@ -558,9 +589,9 @@ html {
 
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
-}
