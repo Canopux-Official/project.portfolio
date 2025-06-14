@@ -168,7 +168,7 @@ const About = () => {
                         <span>Meet the Team</span>
                     </div>
                     <h1 className="about-hero-title">
-                        We Are <span className="gradient-text">Canopus</span>
+                        We Are <span className="gradient-text">Canopux</span>
                     </h1>
                     <p className="about-hero-subtitle">
                         A passionate team of developers, designers, and strategists dedicated to 
