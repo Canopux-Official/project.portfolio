@@ -73,6 +73,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/NavBar.css";
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import logo from '../assets/canopux web logo.png'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -150,7 +151,7 @@ const Navbar = () => {
           {/* Logo Section */}
           <div className="logo-section">
             <button className="logo" onClick={gotoHome}>
-              <span className="logo-text">Canopux</span>
+              <span className="logo-text" ><img height={40} width={200} src={logo} alt="Canopux" /></span>
             </button>
           </div>
 
