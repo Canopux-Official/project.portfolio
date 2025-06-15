@@ -6,6 +6,7 @@ import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import Home from "./pages/Home.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
+import ExploreSection from "./pages/ExploreSection.jsx";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
 
           <Route path="/" element={<Home />} />
           <Route path="/project" element={<ProjectPage />} />
+          <Route path="/explore/:projectTitle" element={<ExploreSection />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

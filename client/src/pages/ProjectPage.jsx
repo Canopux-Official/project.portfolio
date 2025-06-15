@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/ProjectPage.css";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import pb1 from "../assets/Beatyx/p1.jpg";
 import pb2 from "../assets/Beatyx/p2.jpg";
@@ -196,29 +197,66 @@ const ProjectPage = () => {
       </div>
 
       <div className="container">
-        <motion.div className="header" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+        <motion.div
+          className="header"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
           <h1 className="main-title">Innovating Beyond Boundaries</h1>
           <div className="title-underline"></div>
         </motion.div>
 
-        <motion.div className="hero-section" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+        <motion.div
+          className="hero-section"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
           <h2 className="hero-subtitle">Crafting Code with Passion</h2>
           <p className="hero-text">
-            Explore a collection of innovative projects built with cutting-edge technologies and driven by curiosity and purpose.
+            Explore a collection of innovative projects built with cutting-edge
+            technologies and driven by curiosity and purpose.
           </p>
-          <a href="#projects" className="hero-cta">Dive Into the Work</a>
+          <a href="#projects" className="hero-cta">
+            Dive Into the Work
+          </a>
         </motion.div>
 
-        <motion.div className="projects-grid" id="projects" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerStagger}>
+        <motion.div
+          className="projects-grid"
+          id="projects"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={containerStagger}
+        >
           {projects.map((project, index) => (
-            <motion.div key={index} className={`project-item ${index % 2 === 1 ? "reverse" : ""}`} variants={fadeInUp}>
+            <motion.div
+              key={index}
+              className={`project-item ${index % 2 === 1 ? "reverse" : ""}`}
+              variants={fadeInUp}
+            >
               <div className="project-image-container">
-                <div className="image-slider-wrapper" style={{ transform: `translateX(-${(currentImageIndexes[project.title] || 0) * 100}%)` }}>
+                <div
+                  className="image-slider-wrapper"
+                  style={{
+                    transform: `translateX(-${
+                      (currentImageIndexes[project.title] || 0) * 100
+                    }%)`,
+                  }}
+                >
                   {project.images.map((img, i) => (
                     <div key={i} className="image-wrapper">
                       <div className="image-glow"></div>
                       <div className="image-content">
-                        <img src={img} alt={`${project.title} ${i}`} className="project-image" />
+                        <img
+                          src={img}
+                          alt={`${project.title} ${i}`}
+                          className="project-image"
+                        />
                         <div className="image-overlay"></div>
                       </div>
                     </div>
@@ -226,7 +264,16 @@ const ProjectPage = () => {
                 </div>
                 {project.images.length > 1 && (
                   <div className="slide-progress">
-                    <div className="progress-bar" style={{ width: `${(((currentImageIndexes[project.title] || 0) + 1) / project.images.length) * 100}%` }}></div>
+                    <div
+                      className="progress-bar"
+                      style={{
+                        width: `${
+                          (((currentImageIndexes[project.title] || 0) + 1) /
+                            project.images.length) *
+                          100
+                        }%`,
+                      }}
+                    ></div>
                   </div>
                 )}
               </div>
@@ -239,18 +286,33 @@ const ProjectPage = () => {
 
                 <div className="tech-stack">
                   {project.tech.map((tech, idx) => (
-                    <span key={idx} className="tech-badge">{tech}</span>
+                    <span key={idx} className="tech-badge">
+                      {tech}
+                    </span>
                   ))}
                 </div>
 
                 <div className="action-buttons">
-                  <button className="btn btn-primary">
+                  <Link
+                    to={`/explore/${encodeURIComponent(project.title)}`}
+                    className="btn btn-primary"
+                  >
                     <Eye /> Explore More <ChevronRight />
-                  </button>
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                  </Link>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary"
+                  >
                     <Github /> GitHub
                   </a>
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn btn-tertiary">
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-tertiary"
+                  >
                     <ExternalLink /> Live Demo
                   </a>
                 </div>
