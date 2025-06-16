@@ -25,6 +25,12 @@ import px2 from "../assets/TechXpert/p2.png";
 import px3 from "../assets/TechXpert/p3.png";
 import px4 from "../assets/TechXpert/p4.png";
 
+import ATS1 from '../assets/ATS/ATS 1.png'
+import ATS3 from '../assets/ATS/ATS 3.png'
+import ATS6 from '../assets/ATS/ATS 6.png'
+import ATS7 from '../assets/ATS/ATS 7.png'
+import ATS8 from '../assets/ATS/ATS 8.png'
+
 // Mock icons
 const ChevronRight = () => (
   <svg
@@ -52,21 +58,6 @@ const Github = () => (
   </svg>
 );
 
-const ExternalLink = () => (
-  <svg
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-  >
-    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-    <polyline points="15,3 21,3 21,9"></polyline>
-    <line x1="10" y1="14" x2="21" y2="3"></line>
-  </svg>
-);
-
 const Eye = () => (
   <svg
     width="20"
@@ -91,7 +82,6 @@ const projects = [
       "A comprehensive healthcare platform with AI-powered features for medicine comparison, disease prediction, and personalized treatment suggestions — ensuring smarter decisions for patients and faster insights for doctors.",
     tech: ["MERN STACK", "AI", "Cloud"],
     github: "https://github.com/yourusername/arogsphere",
-    demo: "https://arogsphere.example.com",
   },
   {
     title: "Beatyx",
@@ -103,7 +93,24 @@ const projects = [
 
     tech: ["MERN STACK", "Music Streaming"],
     github: "https://github.com/yourusername/beatyx",
-    demo: "https://beatyx.example.com",
+  },
+  {
+    title: "ATS",
+    images: [ATS1, ATS3, ATS6, ATS7, ATS8],
+    description: "TechXpert is a dynamic learning platform for tech skills...",
+    shortDesc:
+      "A smart recruitment assistant that allows job seekers to upload resumes and get instant ATS scores, keyword suggestions, and tailored job matches.",
+    tech: ["NextJS", "Flask", "Prisma"],
+    github: "https://github.com/yourusername/techxpert",
+  },
+   {
+    title: "TechXpert",
+    images: [px1, px2, px3, px4],
+    description: "TechXpert is a dynamic learning platform for tech skills...",
+    shortDesc:
+      "An interactive platform for mastering tech skills through structured learning paths, quizzes, certifications, and career-focused resources.",
+    tech: ["MERN STACK", "Certification Programs"],
+    github: "https://github.com/yourusername/techxpert",
   },
   {
     title: "Trend",
@@ -114,7 +121,6 @@ const projects = [
       "A modern e-commerce platform tailored for fashion enthusiasts, offering a sleek shopping experience, curated collections, and secure checkout.",
     tech: ["MERN STACK", "E-Commerce"],
     github: "https://github.com/yourusername/trend",
-    demo: "https://trend.example.com",
   },
   {
     title: "CreatorConnect",
@@ -125,18 +131,9 @@ const projects = [
       "A dynamic platform enabling creators to connect with their audience, monetize content, and manage fan engagement through secure payment integration.",
     tech: ["MERN STACK", "Razorpay Integration"],
     github: "https://github.com/yourusername/creatorconnect",
-    demo: "https://creatorconnect.example.com",
   },
-  {
-    title: "TechXpert",
-    images: [px1, px2, px3, px4],
-    description: "TechXpert is a dynamic learning platform for tech skills...",
-    shortDesc:
-      "An interactive platform for mastering tech skills through structured learning paths, quizzes, certifications, and career-focused resources.",
-    tech: ["MERN STACK", "Certification Programs"],
-    github: "https://github.com/yourusername/techxpert",
-    demo: "https://techxpert.example.com",
-  },
+ 
+  
 ];
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -307,14 +304,7 @@ const ProjectPage = () => {
                   >
                     <Github /> GitHub
                   </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-tertiary"
-                  >
-                    <ExternalLink /> Live Demo
-                  </a>
+                  
                 </div>
 
                 <div className="decorative-line"></div>

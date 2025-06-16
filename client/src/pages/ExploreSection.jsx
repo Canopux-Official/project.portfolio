@@ -217,18 +217,6 @@ const ExploreSection = () => {
           )}
         </div>
       </div>
-      {project.github && (
-        <div className="projects-links">
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="githubs-button"
-          >
-            💻 View Code
-          </a>
-        </div>
-      )}
     </div>
   );
 };

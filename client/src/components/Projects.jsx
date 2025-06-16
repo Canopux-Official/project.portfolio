@@ -20,6 +20,12 @@ import px2 from "../assets/TechXpert/p2.png";
 import px3 from "../assets/TechXpert/p3.png";
 import px4 from "../assets/TechXpert/p4.png";
 
+import ATS1 from '../assets/ATS/ATS 1.png'
+import ATS3 from '../assets/ATS/ATS 3.png'
+import ATS6 from '../assets/ATS/ATS 6.png'
+import ATS7 from '../assets/ATS/ATS 7.png'
+import ATS8 from '../assets/ATS/ATS 8.png'
+
 const projects = [
   {
     title: "ArogSphere",
@@ -114,8 +120,10 @@ const projects = [
       Languages: ["Python", "JavaScript"],
       Frameworks: ["React.js", "NestJS", "Flask"],
       // testing: ["Postman", "PyTest", "Swagger"],
-      Others: ["Prisma", "Multer", "JWT", "Scikit-learn", "Fitz"],
+      Others: ["Prisma", "Multer", "JWT", "Scikit-learn",],
     },
+    images: [ATS1, ATS3, ATS6, ATS7, ATS8],
+
   },
 ];
 
