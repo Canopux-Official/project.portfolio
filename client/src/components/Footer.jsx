@@ -77,8 +77,8 @@ const Footer = () => {
             <h4 className="column-title">Company</h4>
             <ul className="footer-links">
               <li><Link to="/about">About</Link></li>
-              <li><Link to="#careers">Careers</Link></li>
-              <li><Link to="#services">Services</Link></li>
+              <li><Link to="/project">Projects</Link></li>
+              <li><Link to="/home">Services</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
@@ -86,9 +86,9 @@ const Footer = () => {
           <div className="footer-column">
             <h4 className="column-title">Resources</h4>
             <ul className="footer-links">
-              <li><a href="https://canopux-blog.vercel.app/" target="_blank" rel="noopener noreferrer">Blog</a></li>
-              <li><a href="#privacy">Privacy Policy</a></li>
-              <li><a href="#terms">Terms of Service</a></li>
+              <li><Link to="https://canopux-blog.vercel.app/" target="_blank" rel="noopener noreferrer">Blog</Link></li>
+              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service">Terms of Service</Link></li>
             </ul>
           </div>
 

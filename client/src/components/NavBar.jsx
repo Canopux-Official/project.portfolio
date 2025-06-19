@@ -1,3 +1,75 @@
+// import React, { useState } from "react";
+// import "../styles/NavBar.css";
+// import { Link, useNavigate } from "react-router-dom";
+
+// const Navbar = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+
+//   const toggleMenu = () => {
+//     setIsOpen(!isOpen);
+//   };
+
+//   const scrollToSection = (id) => {
+//     const section = document.getElementById(id);
+//     if (section) {
+//       section.scrollIntoView({ behavior: "smooth" });
+//     }
+//   };
+
+//   const navigate = useNavigate();
+//   const gotoProject = () => {
+//     navigate("/project");
+//   };
+
+//   const gotoHome = () => {
+//     navigate("/");
+//   };
+
+//   const gotoAbout = () => {
+//     navigate("/about");
+//   };
+
+//   const gotoContact = () => {
+//     navigate("/contact");
+//   };
+
+//   return (
+//     <nav className="nav-bar">
+//       <h1 className="logo">Canopux</h1>
+//       <div className={`nav-links ${isOpen ? "active" : ""}`}>
+//         <li>
+//           <button className="nav-btn" onClick={gotoHome}>
+//             Home
+//           </button>
+//         </li>
+//         <li>
+//           <button className="nav-btn" onClick={gotoProject}>
+//             Projects
+//           </button>
+//         </li>
+//         <li>
+//           <button className="nav-btn" onClick={gotoAbout}>
+//             About Us
+//           </button>
+//         </li>
+//         <li>
+//           <button className="nav-btn" onClick={gotoContact}>
+//             Contact Us
+//           </button>
+//         </li>
+//       </div>
+//       <div className="hamburger" onClick={toggleMenu}>
+//         <span className="bar"></span>
+//         <span className="bar"></span>
+//         <span className="bar"></span>
+//       </div>
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
+
+
 import React, { useState, useEffect } from "react";
 import "../styles/NavBar.css";
 import { Link, useLocation, useNavigate } from 'react-router-dom'
@@ -8,8 +80,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
-  const navigate = useNavigate();
-  const location = useLocation();
+  const navigate = useNavigate()
 
   // Handle scroll effect
   useEffect(() => {
@@ -34,23 +105,12 @@ const Navbar = () => {
     return () => document.removeEventListener('click', handleClickOutside);
   }, [isOpen]);
 
-  // Close mobile menu when route changes
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location.pathname]);
-
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   const closeMenu = () => {
     setIsOpen(false);
-  };
-
-  // Handle navigation with menu close
-  const handleNavigation = (path) => {
-    setIsOpen(false); // Close menu immediately
-    navigate(path);
   };
 
   const scrollToSection = (id) => {
@@ -61,24 +121,30 @@ const Navbar = () => {
     }
   };
 
+  const location = useLocation();
+
   useEffect(() => {
     const path = location.pathname;
-
     if (path.startsWith('/project')) setActiveSection('projects');
     else if (path.startsWith('/about')) setActiveSection('about');
     else if (path.startsWith('/contact')) setActiveSection('contact');
+    else if (path.startsWith('/privacy-policy')) setActiveSection('privacy');
+    else if (path.startsWith('/terms-of-service')) setActiveSection('terms');
     else setActiveSection('home');
   }, [location.pathname]);
+
 
   const navItems = [
     { name: 'Home', action: '/', id: 'home' },
     { name: 'Projects', action: '/project', id: 'projects' },
     { name: 'About Us', action: '/about', id: 'about' },
-    { name: 'Contact Us', action: '/contact', id: 'contact' }
+    { name: 'Contact Us', action: '/contact', id: 'contact' },
+    { name: 'Privacy Policy', action: '/privacy-policy', id: 'privacy' },
+    { name: 'Terms Of Service', action: '/terms-of-service', id: 'terms' }
   ];
 
-  const gotoHome = () => {
-    handleNavigation("/");
+  const gotoHome=()=>{
+    navigate("/")
   }
 
   return (
@@ -88,7 +154,7 @@ const Navbar = () => {
           {/* Logo Section */}
           <div className="logo-section">
             <button className="logo" onClick={gotoHome}>
-              <span className="logo-text" ><img height={40} width={200} src={logo} alt="Canopux" /></span>
+              <span className="logo-text" > <img height={40} width={200} src={logo} alt="Canopux" /></span>
             </button>
           </div>
 
@@ -102,7 +168,6 @@ const Navbar = () => {
                     className={`nav-btn ${activeSection === item.id ? 'active' : ''}`}
                     style={{ animationDelay: `${index * 0.1}s` }}
                     aria-current={activeSection === item.id ? 'page' : undefined}
-                    onClick={() => handleNavigation(item.action)}
                   >
                     <span className="nav-btn-text">{item.name}</span>
                     <span className="nav-btn-bg"></span>
@@ -112,7 +177,7 @@ const Navbar = () => {
 
               {/* CTA Button */}
               {/* <div className="nav-cta">
-                <button className="cta-btn" onClick={() => handleNavigation('/contact')}>
+                <button className="cta-btn" onClick={gotoContact}>
                   <span className="cta-text">Get Quote</span>
                   <div className="cta-bg"></div>
                 </button>
