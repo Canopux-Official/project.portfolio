@@ -130,7 +130,7 @@
 }
 
 .terms-title {
-    font-size: clamp(4rem, 10vw, 8rem);
+    font-size: clamp(4rem, 10vw, 6rem);
     font-weight: 900;
     background: linear-gradient(135deg, #2563eb, #8b5cf6, #4f46e5);
     -webkit-background-clip: text;

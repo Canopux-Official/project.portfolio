@@ -128,8 +128,6 @@ const Navbar = () => {
     if (path.startsWith('/project')) setActiveSection('projects');
     else if (path.startsWith('/about')) setActiveSection('about');
     else if (path.startsWith('/contact')) setActiveSection('contact');
-    else if (path.startsWith('/privacy-policy')) setActiveSection('privacy');
-    else if (path.startsWith('/terms-of-service')) setActiveSection('terms');
     else setActiveSection('home');
   }, [location.pathname]);
 
@@ -139,8 +137,6 @@ const Navbar = () => {
     { name: 'Projects', action: '/project', id: 'projects' },
     { name: 'About Us', action: '/about', id: 'about' },
     { name: 'Contact Us', action: '/contact', id: 'contact' },
-    { name: 'Privacy Policy', action: '/privacy-policy', id: 'privacy' },
-    { name: 'Terms Of Service', action: '/terms-of-service', id: 'terms' }
   ];
 
   const gotoHome=()=>{
