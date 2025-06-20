@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { 
-  Users, 
-  Target, 
-  Rocket, 
-  Calendar, 
-  Mail, 
-  Github, 
-  Linkedin, 
-  ExternalLink,
-  MapPin,
-  Trophy,
-  Code,
-  Heart,
-  Lightbulb,
-  ArrowRight
+import {
+    Users,
+    Target,
+    Rocket,
+    Calendar,
+    Mail,
+    Github,
+    Linkedin,
+    ExternalLink,
+    MapPin,
+    Trophy,
+    Code,
+    Heart,
+    Lightbulb,
+    ArrowRight
 } from 'lucide-react'
 import '../styles/About.css'
 import user from "../assets/user.png"
@@ -22,19 +22,19 @@ import { Link } from "react-router-dom"
 const members = [
     {
         image: user,
-        name: "Akhilesh Choudhary",
-        role: "IoT & Hardware Lead",
-        bio: "Passionate about bridging the digital and physical worlds through innovative IoT solutions and cutting-edge hardware development.",
-        skills: ["IOT", "Arduino", "3D Printing", "Frontend Development"],
+        name: "Archit Mishra",
+        role: "SEO & UI/UX Designer",
+        bio: "Combining technical expertise with design thinking to create scalable solutions with outstanding user experiences.",
+        skills: ["React+Vite", "Node JS", "Docker", "MongoDB", "UI-UX Design", "Tailwind CSS", "Material UI"],
         linkedin: "#",
         github: "#"
     },
     {
         image: user,
-        name: "Jagannath Adhikari",
-        role: "Mobile Developer",
-        bio: "Crafting seamless mobile experiences with modern Android development techniques and user-centric design principles.",
-        skills: ["Android Development With Kotlin", "Jet Pack Compose", "Firebase"],
+        name: "Paresh Chandra Pothal",
+        role: "AI/ML Engineer",
+        bio: "Leveraging machine learning and data science to build intelligent solutions that solve real-world problems.",
+        skills: ["React", "Node JS", "MongoDB", "Streamlit", "Python", "ML"],
         linkedin: "#",
         github: "#"
     },
@@ -58,19 +58,20 @@ const members = [
     },
     {
         image: user,
-        name: "Paresh Chandra Pothal",
-        role: "AI/ML Engineer",
-        bio: "Leveraging machine learning and data science to build intelligent solutions that solve real-world problems.",
-        skills: ["React", "Node JS", "MongoDB", "Streamlit", "Python", "ML"],
+        name: "Jagannath Adhikari",
+        role: "Mobile Developer",
+        bio: "Crafting seamless mobile experiences with modern Android development techniques and user-centric design principles.",
+        skills: ["Android Development With Kotlin", "Jet Pack Compose", "Firebase"],
         linkedin: "#",
         github: "#"
     },
+    
     {
         image: user,
-        name: "Archit Mishra",
-        role: "SEO & UI/UX Designer",
-        bio: "Combining technical expertise with design thinking to create scalable solutions with outstanding user experiences.",
-        skills: ["React+Vite", "Node JS", "Docker", "MongoDB", "UI-UX Design", "Tailwind CSS", "Material UI"],
+        name: "Akhilesh Choudhary",
+        role: "IoT & Hardware Lead",
+        bio: "Passionate about bridging the digital and physical worlds through innovative IoT solutions and cutting-edge hardware development.",
+        skills: ["IOT", "Arduino", "3D Printing", "Frontend Development"],
         linkedin: "#",
         github: "#"
     },
@@ -143,9 +144,14 @@ const About = () => {
             })
         }
 
+        const timer = setTimeout(onScroll, 100)
+
         window.addEventListener('scroll', onScroll)
         onScroll()
-        return () => window.removeEventListener('scroll', onScroll)
+        return () => {
+            clearTimeout(timer);
+            window.removeEventListener('scroll', onScroll);
+        };
     }, [])
 
     return (
@@ -158,7 +164,7 @@ const About = () => {
             </div>
 
             {/* Hero Section - Who We Are */}
-            <div 
+            <div
                 ref={refs.intro}
                 className={`about-hero ${isVisible.intro ? 'visible' : ''}`}
             >
@@ -171,8 +177,8 @@ const About = () => {
                         We Are <span className="gradient-text">Canopux</span>
                     </h1>
                     <p className="about-hero-subtitle">
-                        A passionate team of developers, designers, and strategists dedicated to 
-                        transforming ideas into exceptional digital experiences. We combine 
+                        A passionate team of developers, designers, and strategists dedicated to
+                        transforming ideas into exceptional digital experiences. We combine
                         technical expertise with creative thinking to deliver solutions that make a difference.
                     </p>
                     <div className="hero-stats">
@@ -202,7 +208,7 @@ const About = () => {
             </div>
 
             {/* Vision Section */}
-            <div 
+            <div
                 ref={refs.vision}
                 className={`about-vision ${isVisible.vision ? 'visible' : ''}`}
             >
@@ -217,9 +223,9 @@ const About = () => {
                                 Building the Future, One Project at a Time
                             </h2>
                             <p className="vision-description">
-                                We envision a world where technology seamlessly integrates with human needs, 
-                                creating solutions that are not just functional, but transformative. Our mission 
-                                is to democratize access to cutting-edge technology and help businesses of all 
+                                We envision a world where technology seamlessly integrates with human needs,
+                                creating solutions that are not just functional, but transformative. Our mission
+                                is to democratize access to cutting-edge technology and help businesses of all
                                 sizes achieve their digital transformation goals.
                             </p>
                             <div className="vision-points">
@@ -264,7 +270,7 @@ const About = () => {
             </div>
 
             {/* Team Section */}
-            <div 
+            <div
                 ref={refs.team}
                 className={`about-team ${isVisible.team ? 'visible' : ''}`}
             >
@@ -279,11 +285,11 @@ const About = () => {
                             Each member brings unique skills and perspectives, united by our passion for innovation
                         </p>
                     </div>
-                    
+
                     <div className="team-grid">
                         {members.map((member, index) => (
-                            <div 
-                                key={index} 
+                            <div
+                                key={index}
                                 className="team-card"
                                 style={{ animationDelay: `${index * 100}ms` }}
                             >
@@ -330,7 +336,7 @@ const About = () => {
             </div>
 
             {/* Journey Section */}
-            <div 
+            <div
                 ref={refs.journey}
                 className={`about-journey ${isVisible.journey ? 'visible' : ''}`}
             >
@@ -348,8 +354,8 @@ const About = () => {
 
                     <div className="timeline">
                         {milestones.map((milestone, index) => (
-                            <div 
-                                key={index} 
+                            <div
+                                key={index}
                                 className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}
                                 style={{ animationDelay: `${index * 200}ms` }}
                             >
@@ -371,7 +377,7 @@ const About = () => {
             </div>
 
             {/* CTA Section */}
-            <div 
+            <div
                 ref={refs.cta}
                 className={`about-cta ${isVisible.cta ? 'visible' : ''}`}
             >
@@ -382,7 +388,7 @@ const About = () => {
                                 Want to Collaborate? <span className="cta-emoji">🤝</span>
                             </h2>
                             <p className="cta-subtitle">
-                                We're always excited to work on new projects and meet like-minded individuals. 
+                                We're always excited to work on new projects and meet like-minded individuals.
                                 Let's create something amazing together!
                             </p>
                         </div>
