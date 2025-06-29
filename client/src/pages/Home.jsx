@@ -1,6 +1,6 @@
 /* HomeEnhanced.jsx */
 import React, { useState, useEffect, useRef } from "react";
-import { Users, Award, Zap, CheckCircle, ArrowRight, Laptop } from "lucide-react";
+import { Users, Award, Zap, CheckCircle, ArrowRight, Laptop, Palette } from "lucide-react";
 import {
   Code,
   Smartphone,
@@ -74,7 +74,7 @@ const Home = () => {
     { title: "Cloud Solutions", icon: <Cloud /> },
     { title: "Software Maintenance", icon: <Settings /> },
     { title: "Database Management", icon: <Database /> },
-    { title: "Graphic Design", icon: <Laptop /> },
+    { title: "Graphic Design", icon: <Palette /> },
   ];
 
   const testimonials = [
