@@ -202,7 +202,6 @@ const ProjectPage = () => {
           variants={fadeInUp}
         >
           <h1 className="main-title">Innovating Beyond Boundaries</h1>
-          <div className="title-underline"></div>
         </motion.div>
 
         <motion.div

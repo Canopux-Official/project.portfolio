@@ -88,21 +88,21 @@ const members = [
 
 const milestones = [
     {
-        year: "2023",
+        year: "2024",
         title: "Foundation",
-        description: "Started as a group of passionate developers with a shared vision",
+        description: "Started as a passionate student-led community, driven by curiosity and a desire to build meaningful tech from day one.",
         icon: <Rocket />
     },
     {
-        year: "2024",
+        year: "2025",
         title: "First Major Project",
-        description: "Delivered our first enterprise-level solution, establishing our reputation",
+        description: "Delivered our first real-world client project, an AI-powered ATS, turning ideas into impact and validating our potential.",
         icon: <Trophy />
     },
     {
-        year: "2025",
-        title: "Innovation Focus",
-        description: "Focusing on AI, IoT, and cutting-edge technologies",
+        year: "Now",
+        title: "Innovation in Motion",
+        description: "Actively building AI-powered platforms, creator tools, and community-driven tech, solving real problems, one project at a time.",
         icon: <Lightbulb />
     }
 ]
@@ -169,12 +169,8 @@ const About = () => {
                 className={`about-hero ${isVisible.intro ? 'visible' : ''}`}
             >
                 <div className="about-hero-content">
-                    <div className="hero-badge">
-                        <Heart className="hero-badge-icon" />
-                        <span>Meet the Team</span>
-                    </div>
-                    <h1 className="about-hero-title">
-                        We Are <span className="gradient-text">Canopux</span>
+                    <h1 className="main-title">
+                        We Are Canopux
                     </h1>
                     <p className="about-hero-subtitle">
                         A passionate team of developers, designers, and strategists dedicated to

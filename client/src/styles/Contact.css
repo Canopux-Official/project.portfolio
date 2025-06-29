@@ -166,8 +166,8 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 30px;
-  line-height: 1.1;
+  margin-bottom: 35px;
+  line-height: 0.9;
   animation: smoothPulse 4s infinite ease-in-out;
 }
 

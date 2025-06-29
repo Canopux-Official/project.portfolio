@@ -72,10 +72,8 @@ const Home = () => {
     { title: "Web Development", icon: <Code /> },
     { title: "Mobile App Development", icon: <Smartphone /> },
     { title: "Cloud Solutions", icon: <Cloud /> },
-    { title: "IT Consulting", icon: <MonitorSmartphone /> },
     { title: "Software Maintenance", icon: <Settings /> },
     { title: "Database Management", icon: <Database /> },
-    { title: "Cybersecurity", icon: <Shield /> },
     { title: "Other", icon: <MoreHorizontal /> },
   ];
 
@@ -270,7 +268,6 @@ const Home = () => {
         <h2 className="cta-title">
           Ready to Transform Your Business? <span className="cta-icon">🚀</span>
         </h2>
-        <p className="cta-subtitle">Get in touch and let's start building.</p>
         <div className="cta-buttons">
           <Link to="/contact" className="cta-btn primary">
             Contact Us <span className="btn-arrow">→</span>
