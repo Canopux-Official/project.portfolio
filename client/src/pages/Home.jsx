@@ -1,6 +1,9 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/no-unescaped-entities */
 /* HomeEnhanced.jsx */
-import React, { useState, useEffect, useRef } from "react";
-import { Users, Award, Zap, CheckCircle, ArrowRight } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Users, Award, Zap, CheckCircle } from "lucide-react";
+import LogoAnime from "/Logo-anime.gif";
 import {
   Code,
   Smartphone,
@@ -8,12 +11,79 @@ import {
   MonitorSmartphone,
   Settings,
   Database,
-  Shield,
-  MoreHorizontal,
 } from "lucide-react";
 import "../styles/home.css";
 import { Link } from "react-router-dom";
+// sx prop styles for logo container
+const logoContainerSx = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  margin: "1rem auto",
+  width: "fit-content",
 
+  // Border styling
+  //border: "3px solid",
+  borderImage: "linear-gradient(135deg, #4a04eeff, #0062ffff, #0206ffff) 1",
+  borderRadius: "2rem",
+
+  // Shadow effects
+  boxShadow: `
+    0 10px 25px rgba(65, 6, 204, 0.46),
+    0 5px 15px rgba(59, 130, 246, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1)
+  `,
+
+  // Background with subtle gradient
+  background: `linear-gradient(135deg, 
+    rgba(139, 92, 246, 0.05), 
+    rgba(59, 130, 246, 0.05),
+    rgba(99, 102, 241, 0.05)
+  )`,
+
+  // Hover effects
+  transition: "all 0.3s ease",
+  position: "relative",
+  overflow: "hidden",
+
+  "&:hover": {
+    transform: "translateY(-2px)",
+    boxShadow: `
+      0 15px 35px rgba(139, 92, 246, 0.3),
+      0 8px 20px rgba(59, 130, 246, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15)
+    `,
+  },
+
+  // Animated border effect
+  "&::before": {
+    content: '""',
+    position: "absolute",
+    top: "-2px",
+    left: "-2px",
+    right: "-2px",
+    bottom: "-2px",
+    background: "linear-gradient(135deg, #8b5cf6, #3b82f6, #6366f1, #8b5cf6)",
+    borderRadius: "22px",
+    zIndex: -1,
+    opacity: 0,
+    transition: "opacity 0.3s ease",
+  },
+
+  "&:hover::before": {
+    opacity: 1,
+    animation: "borderGlow 2s ease-in-out infinite",
+  },
+
+  "@keyframes borderGlow": {
+    "0%, 100%": {
+      background: "linear-gradient(135deg, #8b5cf6, #3b82f6, #6366f1, #8b5cf6)",
+    },
+    "50%": {
+      background: "linear-gradient(135deg, #6366f1, #8b5cf6, #3b82f6, #6366f1)",
+    },
+  },
+};
 const Home = () => {
   const [isVisible, setIsVisible] = useState({
     header: false,
@@ -75,24 +145,25 @@ const Home = () => {
     { title: "IT Consulting", icon: <MonitorSmartphone /> },
     { title: "Software Maintenance", icon: <Settings /> },
     { title: "Database Management", icon: <Database /> },
-    { title: "Cybersecurity", icon: <Shield /> },
-    { title: "Other", icon: <MoreHorizontal /> },
   ];
 
   const testimonials = [
     {
       name: "Abhikalp Srivastava",
-      feedback: "The project is really good—works well, easy to use, and delivers great results. The UI/UX is very impressive and makes the whole experience smooth and enjoyable.",
+      feedback:
+        "The project is really good—works well, easy to use, and delivers great results. The UI/UX is very impressive and makes the whole experience smooth and enjoyable.",
       designation: "Technical Intern (Embedded Systems), NXP Semiconductors",
     },
     {
       name: "Aman Modi",
-      feedback: "The project was very nice, hats off to the team for delivering a smooth website with NLP integration in such a short time. I loved how you guys were available for revision of UI and backend logic when needed.",
+      feedback:
+        "The project was very nice, hats off to the team for delivering a smooth website with NLP integration in such a short time. I loved how you guys were available for revision of UI and backend logic when needed.",
       designation: "Engineering Trainee (AI & Technology), AIOrdinate",
     },
     {
       name: "Kirti Padhi",
-      feedback: "Excellent job! You delivered high-quality work within the deadline, and impressively, the first draft required only minor tweaks - mostly personalized adjustments. Your ability to seamlessly integrate the desired tech stacks was spot on. Your commitment to meeting deadlines is evident, and your rapid response and implementation of changes were truly impressive.",
+      feedback:
+        "Excellent job! You delivered high-quality work within the deadline, and impressively, the first draft required only minor tweaks - mostly personalized adjustments. Your ability to seamlessly integrate the desired tech stacks was spot on. Your commitment to meeting deadlines is evident, and your rapid response and implementation of changes were truly impressive.",
       designation: "Ex-Software Engineer Trainee, BigBinary",
     },
   ];
@@ -171,7 +242,10 @@ const Home = () => {
           We deliver tailored tech solutions using MERN stack, AI, IoT and more.
         </p>
       </div>
-
+      {/* Logo Animation */}
+      <div style={logoContainerSx}>
+        <img src={LogoAnime} alt="Logo" className="logo-animation" />
+      </div>
       {/* Stats */}
       <div className="stats-section">
         <div className="stats-grid">
@@ -270,7 +344,6 @@ const Home = () => {
         <h2 className="cta-title">
           Ready to Transform Your Business? <span className="cta-icon">🚀</span>
         </h2>
-        <p className="cta-subtitle">Get in touch and let's start building.</p>
         <div className="cta-buttons">
           <Link to="/contact" className="cta-btn primary">
             Contact Us <span className="btn-arrow">→</span>

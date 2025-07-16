@@ -572,3 +572,37 @@
     grid-template-columns: 1fr;
   }
 }
+/* Add these keyframe animations to your ../styles/home.css file */
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 30px rgba(79, 70, 229, 0.3), 0 0 60px rgba(124, 58, 237, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(79, 70, 229, 0.5), 0 0 80px rgba(124, 58, 237, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(79, 70, 229, 0.3), 0 0 60px rgba(124, 58, 237, 0.2);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
