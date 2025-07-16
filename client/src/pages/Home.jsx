@@ -52,14 +52,7 @@ const logoContainerSx = {
   position: "relative",
   overflow: "hidden",
 
-  "&:hover": {
-    transform: { xs: "translateY(-1px)", sm: "translateY(-2px)" },
-    boxShadow: `
-      0 15px 35px rgba(139, 92, 246, 0.3),
-      0 8px 20px rgba(59, 130, 246, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15)
-    `,
-  },
+  
 
   // Animated border
   "&::before": {
@@ -100,6 +93,15 @@ const logoImageSx = {
 };
 
 
+// Move refs outside the component to keep them stable across renders
+const refs = {
+  content: { current: null },
+  testimonials: { current: null },
+  faq: { current: null },
+  process: { current: null },
+  cta: { current: null },
+};
+
 const Home = () => {
   const [isVisible, setIsVisible] = useState({
     header: false,
@@ -111,13 +113,12 @@ const Home = () => {
     cta: false,
   });
 
-  const refs = {
-    content: useRef(null),
-    testimonials: useRef(null),
-    faq: useRef(null),
-    process: useRef(null),
-    cta: useRef(null),
-  };
+  // Assign refs on mount
+  refs.content = useRef(null);
+  refs.testimonials = useRef(null);
+  refs.faq = useRef(null);
+  refs.process = useRef(null);
+  refs.cta = useRef(null);
 
   useEffect(() => {
     setIsVisible((v) => ({ ...v, header: true }));
