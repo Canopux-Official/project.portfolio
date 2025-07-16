@@ -142,7 +142,6 @@ const Home = () => {
     { title: "Web Development", icon: <Code /> },
     { title: "Mobile App Development", icon: <Smartphone /> },
     { title: "Cloud Solutions", icon: <Cloud /> },
-    { title: "IT Consulting", icon: <MonitorSmartphone /> },
     { title: "Software Maintenance", icon: <Settings /> },
     { title: "Database Management", icon: <Database /> },
   ];
