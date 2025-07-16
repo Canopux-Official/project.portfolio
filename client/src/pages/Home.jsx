@@ -14,40 +14,46 @@ import {
 } from "lucide-react";
 import "../styles/home.css";
 import { Link } from "react-router-dom";
-// sx prop styles for logo container
+import Box from "@mui/material/Box";
+
 const logoContainerSx = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  margin: "1rem auto",
+  mx: "auto",
   width: "fit-content",
 
   // Border styling
-  //border: "3px solid",
   borderImage: "linear-gradient(135deg, #4a04eeff, #0062ffff, #0206ffff) 1",
-  borderRadius: "2rem",
+  borderRadius: { xs: "1rem", sm: "2rem" },
 
   // Shadow effects
-  boxShadow: `
-    0 10px 25px rgba(65, 6, 204, 0.46),
-    0 5px 15px rgba(59, 130, 246, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1)
-  `,
+  boxShadow: {
+    xs: `
+      0 6px 12px rgba(65, 6, 204, 0.36),
+      0 3px 8px rgba(59, 130, 246, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1)
+    `,
+    sm: `
+      0 10px 25px rgba(65, 6, 204, 0.46),
+      0 5px 15px rgba(59, 130, 246, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1)
+    `,
+  },
 
-  // Background with subtle gradient
+  // Background
   background: `linear-gradient(135deg, 
     rgba(139, 92, 246, 0.05), 
     rgba(59, 130, 246, 0.05),
     rgba(99, 102, 241, 0.05)
   )`,
 
-  // Hover effects
   transition: "all 0.3s ease",
   position: "relative",
   overflow: "hidden",
 
   "&:hover": {
-    transform: "translateY(-2px)",
+    transform: { xs: "translateY(-1px)", sm: "translateY(-2px)" },
     boxShadow: `
       0 15px 35px rgba(139, 92, 246, 0.3),
       0 8px 20px rgba(59, 130, 246, 0.2),
@@ -55,7 +61,7 @@ const logoContainerSx = {
     `,
   },
 
-  // Animated border effect
+  // Animated border
   "&::before": {
     content: '""',
     position: "absolute",
@@ -64,7 +70,7 @@ const logoContainerSx = {
     right: "-2px",
     bottom: "-2px",
     background: "linear-gradient(135deg, #8b5cf6, #3b82f6, #6366f1, #8b5cf6)",
-    borderRadius: "22px",
+    borderRadius: "inherit",
     zIndex: -1,
     opacity: 0,
     transition: "opacity 0.3s ease",
@@ -84,6 +90,16 @@ const logoContainerSx = {
     },
   },
 };
+
+
+// Responsive logo image styles
+const logoImageSx = {
+  width: { xs: "16rem", sm: "22rem", md: "33rem" },
+  height: "auto",
+  objectFit: "contain",
+};
+
+
 const Home = () => {
   const [isVisible, setIsVisible] = useState({
     header: false,
@@ -242,9 +258,9 @@ const Home = () => {
         </p>
       </div>
       {/* Logo Animation */}
-      <div style={logoContainerSx}>
-        <img src={LogoAnime} alt="Logo" className="logo-animation" />
-      </div>
+      <Box sx={logoContainerSx}>
+        <Box component="img" src={LogoAnime} alt="Logo" sx={logoImageSx} />
+      </Box>
       {/* Stats */}
       <div className="stats-section">
         <div className="stats-grid">
