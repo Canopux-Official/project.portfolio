@@ -136,6 +136,41 @@
   width: 100%;
 }
 
+.footer-link-btn {
+  color: #a0a0b8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+}
+
+.footer-link-btn::before {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #7F7FC8 0%, #FF6767 100%);
+  transition: width 0.3s ease;
+}
+
+.footer-link-btn:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+.footer-link-btn:hover::before {
+  width: 100%;
+}
+
 .social-column {
   align-items: flex-start;
 }
