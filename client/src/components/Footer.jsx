@@ -57,34 +57,9 @@ import React from "react";
 import "../styles/Footer.css";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const scrollToSection = (sectionId) => {
-    let selector = '';
-
-    switch(sectionId) {
-      case 'about':
-        selector = '.about-section';
-        break;
-      case 'projects':
-        selector = '.projects-section';
-        break;
-      case 'contact':
-        selector = '.contact-section';
-        break;
-      case 'home':
-        selector = '.canopux-header';
-        break;
-      default:
-        selector = '.canopux-header';
-    }
-
-    const element = document.querySelector(selector);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <footer className="footer">
       <div className="footer-gradient-bg"></div>
@@ -101,19 +76,19 @@ const Footer = () => {
           <div className="footer-column">
             <h4 className="column-title">Company</h4>
             <ul className="footer-links">
-              <li><button onClick={() => scrollToSection('about')} className="footer-link-btn">About</button></li>
-              <li><button onClick={() => scrollToSection('projects')} className="footer-link-btn">Projects</button></li>
-              <li><button onClick={() => scrollToSection('home')} className="footer-link-btn">Services</button></li>
-              <li><button onClick={() => scrollToSection('contact')} className="footer-link-btn">Contact</button></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/project">Projects</Link></li>
+              <li><Link to="/">Services</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
 
           <div className="footer-column">
             <h4 className="column-title">Resources</h4>
             <ul className="footer-links">
-              <li><a href="https://canopux-blog.vercel.app/" target="_blank" rel="noopener noreferrer" className="footer-link-btn">Blog</a></li>
-              <li><a href="#privacy-policy" className="footer-link-btn">Privacy Policy</a></li>
-              <li><a href="#terms-of-service" className="footer-link-btn">Terms of Service</a></li>
+              <li><Link to="https://canopux-blog.vercel.app/" target="_blank" rel="noopener noreferrer">Blog</Link></li>
+              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service">Terms of Service</Link></li>
             </ul>
           </div>
 
